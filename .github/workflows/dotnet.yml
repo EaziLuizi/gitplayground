@@ -24,13 +24,13 @@ jobs:
       with:
         dotnet-version: 6.0.x
     - name: Restore dependencies
-      run: dotnet restore ${{github.workspace}}WebApplication1/WebApplication1/WebApplication1.csproj
+      run: dotnet restore ${{github.workspace}}/WebApplication1/WebApplication1.csproj
     - name: Build
-      run: dotnet build ${{github.workspace}}WebApplication1/WebApplication1/WebApplication1.csproj --no-restore
+      run: dotnet build ${{github.workspace}}/WebApplication1/WebApplication1.csproj --no-restore
     - name: Test
-      run: dotnet test ${{github.workspace}}WebApplication1/WebApplication1/WebApplication1.csproj --no-build --verbosity normal
+      run: dotnet test ${{github.workspace}}/WebApplication1/WebApplication1.csproj --no-build --verbosity normal
     - name: Publish
-      run: dotnet publish ${{github.workspace}}WebApplication1/WebApplication1/WebApplication1.csproj -c Release -o dotnetwebapp
+      run: dotnet publish ${{github.workspace}}/WebApplication1/WebApplication1.csproj -c Release -o dotnetwebapp
     - name: deply to azure webapp
       uses: azure/webapps-deploy@v2
       with:
