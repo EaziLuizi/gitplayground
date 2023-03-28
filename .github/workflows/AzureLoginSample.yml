@@ -1,3 +1,7 @@
+
+on:
+  workflow_dispatch:
+  
 name: AzureLoginSample
 
 jobs:
